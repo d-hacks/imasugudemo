@@ -16,25 +16,20 @@ Ajaxを使ったテキストと画像ファイルのPOSTができます。
 
 1. カレントディレクトリ以下の任意の場所に雛形Flaskアプリをclone
 ```
-$ git clone git@github.com:d-hacks/sampleapp.git
+$ git clone git@github.com:d-hacks/sampleapp.git newapp ## newappの部分を書き換えてください
 ```
 
 2. アプリ名を変更
 
 ```
-$ mv sampleapp newapp    ## newappの部分を書き換えてください
-$ mv newapp/sampleapp.py newapp.py
+$ cd newapp
+$ mv sampleapp.py newapp.py
 ```
 
 3. Nginx、uWSGI、systemd serviceの設定ファイルを作成
 ```
 $ cd /home/hirono/projects/newapp/src
 $ python create_config_files.py --appname 'newapp' --appdirpath '/home/hirono/projects' --user 'hirono'
-```
-4. wsgi.py、wsgi.iniをnewapp/直下に移動
-```
-$ mv wsgi.py ../wsgi.py
-$ mv wsgi.ini ../wsgi.ini
 ```
 
 ## 2. virtualEnvの作成
@@ -108,16 +103,17 @@ server {
   ## 他の人のlocationの記述
 
   ## ↓↓↓この最後の部分にnewapp.confの中身を以下のように貼り付ける
-  location ~ ^/sampleapp(.*)$ {
-    root /home/hirono/projects/sampleapp;
+  ## newapp - hirono
+  location ~ ^/newapp(.*)$ {
+    root /home/hirono/projects/newapp;
     include uwsgi_params;
-    uwsgi_pass unix:/home/hirono/projects/sampleapp/sampleapp.sock;
-    uwsgi_param SCRIPT_NAME /sampleapp;
+    uwsgi_pass unix:/home/hirono/projects/newapp/newapp.sock;
+    uwsgi_param SCRIPT_NAME /newapp;
     uwsgi_param PATH_INFO /$1;
   }
-  location ^~ /sampleapp/static/js   { root /home/hirono/projects/; }
-  location ^~ /sampleapp/static/css  { root /home/hirono/projects/; }
-  location ^~ /sampleapp/static/img  { root /home/hirono/projects/; }
+  location ^~ /newapp/static/js   { root /home/hirono/projects/; }
+  location ^~ /newapp/static/css  { root /home/hirono/projects/; }
+  location ^~ /newapp/static/img  { root /home/hirono/projects/; }
   ### ↑↑↑
 }
 

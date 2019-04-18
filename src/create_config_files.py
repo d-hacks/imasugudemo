@@ -8,7 +8,7 @@ def remove_old_file(filepath):
 
 ## Create wsgi.ini
 def create_wsgiini_file(appname):
-    wsgiini_filepath = "wsgi.ini"
+    wsgiini_filepath = "../wsgi.ini"
     remove_old_file(wsgiini_filepath)
     with open(wsgiini_filepath, "a") as f:
         f.write("[uwsgi]\n")
@@ -23,7 +23,7 @@ def create_wsgiini_file(appname):
 
 ## Create wsgi.py
 def create_wsgipy_file(appname):
-    wsgipy_filepath = "wsgi.py"
+    wsgipy_filepath = "../wsgi.py"
     remove_old_file(wsgipy_filepath)
     with open(wsgipy_filepath, "a") as f:
         f.write("from {} import app\n\n".format(appname))
@@ -33,7 +33,7 @@ def create_wsgipy_file(appname):
 
 ## Create systemd service file
 def create_systemd_service_file(appname, appdirpath, user):
-    service_filepath = "{}.service".format(appname)
+    service_filepath = "../{}.service".format(appname)
     remove_old_file(service_filepath)
     with open(service_filepath, "a") as f:
         f.write("[Unit]\n")
@@ -50,7 +50,7 @@ def create_systemd_service_file(appname, appdirpath, user):
     print("Create {}".format(service_filepath))
 
 def create_nginx_config_file(appname, appdirpath, user):
-    nginx_filepath = "{}.conf".format(appname)
+    nginx_filepath = "../{}.conf".format(appname)
     remove_old_file(nginx_filepath)
     with open(nginx_filepath, "a") as f:
         f.write("  ## {} - {}\n\n".format(appname, user))
