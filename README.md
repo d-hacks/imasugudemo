@@ -49,7 +49,6 @@ $ source newappenv/bin/activate
 
 3. 使用しているライブラリ全てと、Flask、uWSGIをvenv内にインストール
 ```
-(newappenv) $ pip install torch
 (newappenv) $ pip install uwsgi flask
 ```
 
@@ -143,7 +142,8 @@ $ sudo systemctl restart nginx
 - serviceの再起動→nginxの再起動
 
 ```
-$ sudo systemctl restart sampleapp
+$ sudo systemctl stop newapp
+$ sudo systemctl start newapp
 $ sudo systemctl restart nginx
 ```
 
