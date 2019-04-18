@@ -3,7 +3,7 @@
 Flaskを使ったデモを作成するための雛形コードです。
 Ajaxを使ったテキストと画像ファイルのPOSTができます。
 
-![sampleapp picture](https://gyazo.com/9ed57fe3817d4724d2a3ee8fe62656e5)
+[![Image from Gyazo](https://i.gyazo.com/ef30125964c2e0f2e001b709256d2fa2.png)](https://gyazo.com/ef30125964c2e0f2e001b709256d2fa2)
 
 ## 導入
 
@@ -103,10 +103,10 @@ server {
   location / {
           index index.html index.htm index.nginx-debian.html;
   }
-  
+
   ## 他の人のlocationの記述
-  
-  ## ↓↓↓この最後の部分にnewapp.confの中身を以下のように貼り付ける 
+
+  ## ↓↓↓この最後の部分にnewapp.confの中身を以下のように貼り付ける
   location ~ ^/sampleapp(.*)$ {
     root /home/hirono/projects/sampleapp;
     include uwsgi_params;
@@ -180,13 +180,13 @@ $ sudo tailf /var/log/nginx/error.log
 ```
 $.ajax({
          url: '/upload'
-         
+
 $.ajax({
          url: '/newapp/upload_image',
 ```
 
 ### 参考URL
-独自に作った場合はこの記事を参考にすると良いです! 
+独自に作った場合はこの記事を参考にすると良いです!
 - https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04
 
 Ajax
