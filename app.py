@@ -24,5 +24,5 @@ def show_input_image():
 
 
 if __name__ == "__main__":
-        app.run(debug=True)
-        # app.run(host='133.27.171.147', port=80, processes=3, debug=True)
+    app.run(debug=True)
+    # app.run(host='0.0.0.0')
