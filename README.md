@@ -3,7 +3,12 @@
 Flaskを使ったデモを作成するための雛形コードです。
 Ajaxを使ったテキストと画像ファイルのPOSTができます。
 
+実行環境
+Ubuntu 16.04.5
+Python 3.5.2
+
 [![Image from Gyazo](https://i.gyazo.com/8acb45c938f575b9d2d26528fb7e9dae.gif)](https://gyazo.com/8acb45c938f575b9d2d26528fb7e9dae)
+
 
 ## 導入
 
@@ -34,12 +39,7 @@ $ python create_config_files.py --appname 'newapp' --appdirpath '/home/hirono/pr
 
 ## 2. virtualEnvの作成
 
-1. python3-venvのインストール
-```
-$ sudo apt install python3-venv
-```
-
-2. 対象のFlaskアプリのディレクトリの中でvenvを立ち上げる
+1. 対象のFlaskアプリのディレクトリの中でvenvを立ち上げる
 
 ```
 $ cd /home/hirono/projects/newapp
@@ -47,12 +47,12 @@ $ python -m venv newappenv
 $ source newappenv/bin/activate
 ```
 
-3. 使用しているライブラリ全てと、Flask、uWSGIをvenv内にインストール
+2. 使用しているライブラリ全てと、Flask、uWSGIをvenv内にインストール
 ```
 (newappenv) $ pip install uwsgi flask
 ```
 
-4. venvから出る
+3. venvから出る
 
 ```
 (newappenv) $ deactivate
@@ -129,8 +129,6 @@ $ sudo systemctl restart nginx
 ```
 
 4. https://bacchus.ht.sfc.keio.ac.jp/newapp にアクセス
-
-
 
 
 ## エラー対処方法
