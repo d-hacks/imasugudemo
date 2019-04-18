@@ -40,7 +40,7 @@ def create_systemd_service_file(appname, appdirpath, user):
         f.write("Description=uWSGI instance to serve {}\n".format(appname))
         f.write("After=network.target\n\n")
         f.write("[Service]\n")
-        f.write("User={}".format(user))
+        f.write("User={}\n".format(user))
         f.write("Group=www-data\n")
         f.write("WorkingDirectory={}/{}\n".format(appdirpath, appname))
         f.write("Environment='PATH={}/{}/{}env/bin'\n".format(appdirpath, appname, appname))
@@ -49,10 +49,11 @@ def create_systemd_service_file(appname, appdirpath, user):
         f.write("WantedBy=multi-user.target\n")
     print("Create {}".format(service_filepath))
 
-def create_nginx_config_file(appname, appdirpath):
+def create_nginx_config_file(appname, appdirpath, user):
     nginx_filepath = "{}.conf".format(appname)
     remove_old_file(nginx_filepath)
     with open(nginx_filepath, "a") as f:
+        f.write("  ## {} - {}\n\n".format(appname, user))
         f.write("  location ~ ^/{}(.*)$ {{\n".format(appname))
         f.write("    root {}/{};\n".format(appdirpath, appname))
         f.write("    include uwsgi_params;\n")
@@ -75,4 +76,4 @@ if __name__ == '__main__':
     create_wsgiini_file(args.appname)
     create_wsgipy_file(args.appname)
     create_systemd_service_file(args.appname, args.appdirpath, args.user)
-    create_nginx_config_file(args.appname, args.appdirpath)
+    create_nginx_config_file(args.appname, args.appdirpath, args.user)
