@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="my-5 mx-5">
+        <h1 class="my-3 text-center">SampleApp</h1>
+        <h2 class="my-3 text-center">Text Form</h2>
+        <p class="my-5 text-center">デモの雛形ページです。入力したテキストがAjaxで表示されます。</p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="my-5 mx-5">
+        <div class="input-group">
+          <input type="text" class="form-control" name="input_text" id="inputText" placeholder="Hello Word">
+          <button class="btn btn-success" id="textFormSubmit" type="submit">Submit</button>
+          <button class="btn btn-outline-dark" id="clearFormBtn">clear</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="my-5 mx-5">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Result</h4>
+          <hr>
+          <p>input: </p>
+          <div id="textOutputArea">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="my-5 mx-5">
+        <div class="input-group">
+
+          <form id="myForm" name="myForm" method="post" action="">
+            <input type="file" name="file" id="formFile"/>
+            <input class="btn btn-success" type="submit" id="submitBtn" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="my-5 mx-5">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Result</h4>
+          <hr>
+          <p>input: </p>
+          <div id="imageOutputArea">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

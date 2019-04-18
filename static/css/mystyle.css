@@ -1,0 +1,68 @@
+a { text-decoration: none; }
+a:hover {
+}
+
+.nav-link {
+  color: #2c2d34;
+}
+.nav-link:hover {
+  background-color: #2c2d34;
+  color: white;
+}
+.left_side {
+  float: left;
+  /* min-width: 500px; */
+}
+.right_side {
+  float: left;
+}
+
+.nextBtn{
+  display: inline-block;
+  text-decoration: none;
+  background: #2c2d34;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .4s;
+}
+.nextBtn:hover{
+  background: #424242;
+  color: white;
+}
+.nextBtn:active{
+  width: 59px;
+  height: 59px;
+}
+
+.fadein {
+    opacity : 0.1;
+    transform : translate(0, 50px);
+    transition : all 500ms;
+    }
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+    }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  background-color: #f5f5f5;
+}
