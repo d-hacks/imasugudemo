@@ -27,8 +27,7 @@ $ git clone git@github.com:d-hacks/sampleapp.git newapp ## newappの部分を書
 2. アプリ名を変更
 
 ```
-$ cd newapp
-$ mv sampleapp.py newapp.py
+$ mv newapp/sampleapp.py newapp/newapp.py
 ```
 
 3. Nginx、uWSGI、systemd serviceの設定ファイルを作成
@@ -64,13 +63,10 @@ $ source newappenv/bin/activate
 $ sudo mv /home/hirono/projects/newapp/newapp.service /etc/systemd/system/newapp.service
 ```
 
-2. serviceの起動
+2. serviceの起動 + statusの確認
 ```
 $ sudo systemctl start newapp
 $ sudo systemctl enable newapp
-```
-3. statusの確認
-```
 $ sudo systemctl status newapp
 ```
 
