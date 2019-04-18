@@ -3,7 +3,7 @@
 Flaskを使ったデモを作成するための雛形コードです。
 Ajaxを使ったテキストと画像ファイルのPOSTができます。
 
-[![Image from Gyazo](https://i.gyazo.com/ef30125964c2e0f2e001b709256d2fa2.png)](https://gyazo.com/ef30125964c2e0f2e001b709256d2fa2)
+[![Image from Gyazo](https://i.gyazo.com/8acb45c938f575b9d2d26528fb7e9dae.gif)](https://gyazo.com/8acb45c938f575b9d2d26528fb7e9dae)
 
 ## 導入
 
