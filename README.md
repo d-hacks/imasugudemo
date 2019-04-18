@@ -2,6 +2,9 @@
 
 Sampleapp directory path
 
+- sampleappでsampleappとなっているところを自分のアプリ名に書き換えて使ってください
+- README内では
+
 ```
 bacchus.ht.sfc.keio.ac.jp:/home/hirono/projects/sampleapp
 ```
@@ -34,46 +37,7 @@ $ source sampleappenv/bin/activate
 (sampleappenv) $ pip install uwsgi flask
 ```
 
-5. app.pyの名称をsampleapp.pyに変更
-```
-(sampleappenv) $ mv app.py sampleapp.py
-```
-
-6. sampleapp.pyの `if __name__ == "__main__"` 内のコメントアウトを外し、`app.run(debug=True)`の方をコメントアウトする
-
-```
-（sampleapp.pyの中身）
-
-# coding: utf-8
-
-from flask import Flask, render_template, request, Response
-import json
-
-app = Flask(__name__)
-
-@app.route("/")
-def index():
-   return render_template('index.html')
-
-@app.route('/show_input_text', methods=['POST'])
-def show_input_text():
-    input_text = request.json['input_text']
-    return Response(json.dumps({ 'text': input_text }))
-
-@app.route('/show_input_image', methods=['POST'])
-def show_input_image():
-    input_image_file = request.files['file']
-    image_path = "./static/img/input_image.png"
-    input_image_file.save(image_path)
-    return Response(json.dumps({ 'image_path': image_path }))
-
-
-if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run(host='0.0.0.0')
-```
-
-6. port5000のリクエストを許可
+5. port5000のリクエストを許可
 
 ```
 (sampleappenv) $ sudo ufw allow 5000
@@ -113,7 +77,6 @@ if __name__ == "__main__":
 (sampleappenv) $ uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
 ```
 
-
 10. venvから出る
 
 ```
@@ -123,10 +86,12 @@ if __name__ == "__main__":
 
 ## 2. uWSGIをsystemdで動かす設定
 
-1. uWSGIの設定ファイルの作成
+1. uWSGIの設定ファイルの編集
+
 ```
 $ vim ~/projects/sampleapp/sampleapp.ini
 ```
+
 
 
 ```
@@ -149,6 +114,7 @@ die-on-term = true
 
 ```
 $ sudo vim /etc/systemd/system/sampleapp.service
+
 ```
 
 ```
