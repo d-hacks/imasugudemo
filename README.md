@@ -55,7 +55,7 @@ $ source newappenv/bin/activate
 4. venvから出る
 
 ```
-(sampleappenv) $ deactivate
+(newappenv) $ deactivate
 ```
 
 ## 3. systemd serviceの設定
