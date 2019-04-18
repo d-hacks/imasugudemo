@@ -62,7 +62,7 @@ $ source newappenv/bin/activate
 ## 3. systemd serviceの設定
 1. /etc/systemd/system/直下に `newapp.service` を移動
 ```
-$ sudo mv /home/hirono/projects/newapp/src/newapp.service /etc/systemd/system/newapp.service
+$ sudo mv /home/hirono/projects/newapp/newapp.service /etc/systemd/system/newapp.service
 ```
 
 2. serviceの起動
@@ -79,7 +79,7 @@ $ sudo systemctl status newapp
 
 1. /etc/nginx/sites-available/flaskappに `newapp.conf` の中身を追記
 
-- newapp.confは `newapp/src` 直下に入ってます
+- newapp.confは `newapp/` 直下に作られています
 
 ```
 $ sudo vim /etc/nginx/sites-available/flaskapp
