@@ -22,7 +22,8 @@ $ git clone git@github.com:d-hacks/sampleapp.git
 2. アプリ名を変更
 
 ```
-$ mv sampleapp newapp　　  ## newappの部分を書き換えてください
+$ mv sampleapp newapp    ## newappの部分を書き換えてください
+$ mv newapp/sampleapp.py newapp.py
 ```
 
 3. Nginx、uWSGI、systemd serviceの設定ファイルを作成
