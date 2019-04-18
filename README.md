@@ -1,4 +1,12 @@
-# Flask Demo
+# Flask Sample Application
+
+Sampleapp directory path
+
+```
+bacchus.ht.sfc.keio.ac.jp:/home/hirono/projects/sampleapp
+```
+
+
 
 ## 1. virtualEnvの作成
 
@@ -231,6 +239,12 @@ $ sudo systemctl restart nginx
 ### 1. アプリ内の`<script>` `<img>` `<link>`タグ内のリンクを書き換える
 
 ```
+$ bash grep_static_path.sh
+```
+
+※手動で直す場合は以下のように書き換えてください
+```
+（例）
 <img src="/static/img/d-hacks-logo.img">
 <link rel="stylesheet" href="/static/css/mystyle.css">
 <script src="/static/js/myscript.js"></script>
