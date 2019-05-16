@@ -1,4 +1,4 @@
-# Flask Sample Application
+# Flask Sample Application "Imasugudemo"
 
 Flaskを使ったデモを作成するための雛形コードです。
 Ajaxを使ったテキストと画像ファイルのPOSTができます。
