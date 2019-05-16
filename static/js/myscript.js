@@ -4,7 +4,7 @@ $(function() {
         var inputdata = JSON.stringify({ "input_text": $("#inputText").val() });
         $.ajax({
             type: 'POST',
-            url: '/sampleapp/show_input_text',
+            url: '/imasugudemo/show_input_text',
             data: inputdata,
             contentType: 'application/json',
             dataType: 'json',
@@ -23,14 +23,14 @@ $(function() {
        var formData = new FormData( form );
 
        $.ajax({
-         url: '/sampleapp/show_input_image',
+         url: '/imasugudemo/show_input_image',
          method: 'post',
          dataType: 'json',
          data: formData,
          processData: false,
          contentType: false
        }).done(function( res ) {
-         $('#imageOutputArea').html("<img src='/sampleapp/static/img/" + res['image_filename'] + "' alt='input image'>");
+         $('#imageOutputArea').html("<img src='/imasugudemo/static/img/" + res['image_filename'] + "' alt='input image'>");
          console.log( 'SUCCESS', res );
        }).fail(function( jqXHR, textStatus, errorThrown ) {
          console.log( 'ERROR', jqXHR, textStatus, errorThrown );

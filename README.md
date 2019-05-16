@@ -21,13 +21,13 @@ Python 3.5.2
 
 1. カレントディレクトリ以下の任意の場所に雛形Flaskアプリをclone
 ```
-$ git clone git@github.com:d-hacks/sampleapp.git newapp ## newappの部分を書き換えてください
+$ git clone git@github.com:d-hacks/imasugudemo.git newapp ## newappの部分を書き換えてください
 ```
 
 2. アプリ名を変更
 
 ```
-$ mv newapp/sampleapp.py newapp/newapp.py
+$ mv newapp/imasugudemo.py newapp/newapp.py
 ```
 
 3. Nginx、uWSGI、systemd serviceの設定ファイルを作成
@@ -157,9 +157,9 @@ $ sudo tailf /var/log/nginx/error.log
 <link rel="stylesheet" href="/static/css/mystyle.css">
 <script src="/static/js/myscript.js"></script>
 ↓
-<img src="/sampleapp/static/img/logo.img">
-<link rel="stylesheet" href="/sampleapp/static/css/mystyle.css">
-<script src="/sampleapp/static/js/myscript.js"></script>
+<img src="/imasugudemo/static/img/logo.img">
+<link rel="stylesheet" href="/imasugudemo/static/css/mystyle.css">
+<script src="/imasugudemo/static/js/myscript.js"></script>
 ```
 
 ※ locationの評価条件にimg, js, cssを明記しないと、nginxのデフォルトの設定で/usr/www/html以下にファイルを探しに行ってしまう。
